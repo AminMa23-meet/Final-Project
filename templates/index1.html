@@ -36,7 +36,7 @@
             <div class="modal-body border-0">
                 <p class="w-100 second-text mb-4 h5 text-center">من فضلك قم بادخال بيانات المستخدم</p>
                 <form method="post" action="https://plus.yallaryada.net/users" class="row">
-                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                    <div class="form-group col-12">
+                    <input type="hidden" name="_token" value="Yx1FlxWupBh3hErpg4aft2pPfUJzX5mX90jTAIt9">                    <div class="form-group col-12">
                         <label>ايميل المستخدم</label>
                         <input name="email" class="form-control pt-1 pb-1 w-100 radius-15 " type="email" required>
                     </div>
@@ -167,7 +167,7 @@
                     </div>
                 </div>
                 <form id="delete-form" method="post" action="https://plus.yallaryada.net/exercises/delete">
-                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                    <input type="hidden" name="id" id="delete-form-id">
+                    <input type="hidden" name="_token" value="Yx1FlxWupBh3hErpg4aft2pPfUJzX5mX90jTAIt9">                    <input type="hidden" name="id" id="delete-form-id">
                 </form>
             </div>
             <div class="modal-footer">
@@ -202,55 +202,25 @@
 <div class="modal fade" tabindex="-1" id="trainigsLibrary" aria-labelledby="trainigsLibraryLabel"
     aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">0
+        <div class="modal-content">
             <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
                     aria-label="Close" id="close-clear-form">&times;</a></div>
             <div class="modal-body border-0">
-                <form id="save-from-lib" class="w-100 row m-0" method="POST"  action="/home">
-                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                    <input type="hidden" name="selected-id">
+                <form id="save-from-lib" class="w-100 row m-0" action="/home" method="post">
+                    <input type="hidden" name="_token" value="Yx1FlxWupBh3hErpg4aft2pPfUJzX5mX90jTAIt9">                    <input type="hidden" name="selected-id">
                     <div class="col-12 mb-4 text-center">
-                        <div class="h5">مكتبة وجبات يلا رياضة</div>
+                        <div class="h5">مكتبة تمارين يلا رياضة</div>
                     </div>
                     <div class="col-lg-8 col-12 form-group"><input class="form-control f-normal grey-bg ico mini"
-                            type="text" name="lib-search" placeholder="ابحث عن وجبة.." /> <i
-                            ><button type="submit" style="background-color: transparent;  border:none; margin-bottom:5px;"><img src="../static/img/search.png"></button></i></div>
-                    <div class="col-lg-4 col-12 form-group d-fixed">
+                            type="text" name="lib-search" placeholder="ابحث عن تمرين.." /><i>
+                                <button type="submit" style="background-color: transparent;  border:none; margin-bottom: 7px;"><img src="../static/img/search.png"></button></i></div>
+                     <div class="col-lg-4 col-12 form-group d-fixed">
                         <input class="w-100 d-block butn main-butn mr-2 mb-2" type="submit" value="اختيار" id="btn-lib-save">
                     </div>
-							
-                    
 
-</form>
-  <div class="w-100 row m-0 trains-list" id="lib-videos" data-video="5900"
+                <div class="w-100 row m-0 trains-list" id="lib-videos" data-video="5900"
                     style="overflow-y: auto; height: 300px">
 
-     
-    {%for i in range(loaded['data']|length)%}
-    <div class="col-12 item mb-2 pos-relative" data-video-id="5887">
-        <input class="aa-check video-train-check" type="radio" name="train[]" value="5887" />
-        <div class="img d-inline-block mr-2" style="height: 90px; width:92px;">
-                            <img class="w-100" src="{{loaded['data'][i]['image']}}" style="height:50px; object-fit: cover" alt="thumbnail">
-                    </div>
-        <div class="cont d-inline-block">
-            
-                <div class="ti f-bold mb-2">{{translator.translate(loaded['data'][i]['name'],lang_src="en", lang_tgt="ar")}}</div>
-                <div class="desc" style="height: 100px;">
-                    <p>العناصر الغذائية: سعرات حراريه:{{loaded['data'][i]['nutrients']['calories from fat']}}
-                    	بروتين: {{loaded['data'][i]['nutrients']['protein']}} 
-                    </p>
-                    	<br>
-                    <p style="font-size: 12px;">   
-                    مكونات: 
-                    {%for k in range(loaded['data'][i]['ingredients']|length)%}
-                    {{translator.translate(loaded['data'][i]['ingredients'][k],lang_src="en", lang_tgt="ar")}}
-                    {%endfor%}
-                    </p>
-                    
-                </div>
-        </div>
-    </div>
-    
-    {%endfor%}
                 </div>
 
 
@@ -258,7 +228,7 @@
         </div>
     </div>
 </div>
-
+</form>
     <div class="modal fade" tabindex="-1" id="uploadTrainigForm" aria-labelledby="uploadTrainigFormLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -266,7 +236,50 @@
                 <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0"
                         data-dismiss="modal" aria-label="Close">&times;</a></div>
                 <div class="modal-body border-0">
-
+                    <form class="w-100 row m-0" method="post" action="https://plus.yallaryada.net/exercises/812/store"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="Yx1FlxWupBh3hErpg4aft2pPfUJzX5mX90jTAIt9">                        <div class="col-12 mb-4 text-center">
+                            <div class="h5">تحميل تمرين</div>
+                        </div>
+                        <div class="col-12 mb-3 txt-lg-right">
+                            <input class="d-lg-inline-block d-block butn main-butn" type="submit"
+                                value="تم الاختيار" />
+                        </div>
+                        <div class="col-12">
+                            <div class="d-block w-100 grey-bg radius-11 pt-3 pb-3 pr-2 pl-2 training-item">
+                                <div class="w-100 row m-0">
+                                    <div class="col-lg-6 col-12 mini form-group">
+                                        <div class="d-block mini form-group">
+                                            <label class="w-100">عنوان التمرين</label>
+                                            <input required name="title" class="w-100 form-control mini"
+                                                type="text" placeholder="..تمرين بطن" />
+                                        </div>
+                                        <div class="d-block mini form-group">
+                                            <label class="w-100">النص</label>
+                                            <input required class="w-100 form-control mini" type="text"
+                                                name="frequency" placeholder="جولات, تكرارت, 12x4 ..." />
+                                        </div>
+                                        <div class="d-block mini form-group">
+                                            <label class="w-100">وصف التمرين</label>
+                                            <textarea required name="description" class="w-100 form-control mini" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12 mini form-group">
+                                        <div class="w-100 mb-3 second-text"><span>ملف التمرين</span></div>
+                                        <div class="d-block w-100 upload-vid w-100 white-bg text-center upload-file">
+                                            <input name="exercise_file" type="file" id="up-trainvid" />
+                                            <video class="vid-wrap" controls></video>
+                                            <div class="icon-area"><span class="butn main-butn bordered">ارفع
+                                                    فيديو</span></div>
+                                            <div class="del-vid d-none"><img class="w-100"
+                                                    src="https://plus.yallaryada.net/front/imgs/icons/trash.svg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -279,6 +292,52 @@
             <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
                     aria-label="Close">&times;</a></div>
             <div class="modal-body border-0">
+                <form class="w-100 row m-0" method="post" action="https://plus.yallaryada.net/exercises/update"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="Yx1FlxWupBh3hErpg4aft2pPfUJzX5mX90jTAIt9">                    <input type="hidden" name="id" id="input-id">
+                    <div class="col-12 mb-4 text-center">
+                        <div class="h5">تعديل تمرين</div>
+                    </div>
+                    <div class="col-12 mb-3 txt-lg-right">
+                        <input class="d-lg-inline-block d-block butn main-butn" type="submit" value="تم التعديل" />
+                    </div>
+                    <div class="col-12">
+                        <div class="d-block w-100 grey-bg radius-11 pt-3 pb-3 pr-2 pl-2 training-item">
+                            <div class="w-100 row m-0">
+                                <div class="col-lg-6 col-12 mini form-group">
+                                    <div class="d-block mini form-group">
+                                        <label class="w-100">عنوان التمرين</label>
+                                        <input id="input-title" required name="title"
+                                            class="w-100 form-control mini" type="text"
+                                            placeholder="..تمرين بطن" />
+                                    </div>
+                                    <div class="d-block mini form-group">
+                                        <label class="w-100">النص</label>
+                                        <input id="input-frequency" required class="w-100 form-control mini"
+                                            type="text" name="frequency" placeholder="جولات, تكرارت, 12x4 .." />
+                                    </div>
+                                    <div class="d-block mini form-group">
+                                        <label class="w-100">وصف التمرين</label>
+                                        <textarea id="input-description" required name="description" class="w-100 form-control mini" rows="4"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 mini form-group">
+                                    <div class="w-100 mb-3 second-text"><span>ملف التمرين</span></div>
+                                    <div class="d-block w-100 upload-vid w-100 white-bg text-center upload-file">
+                                        <input name="exercise_file" type="file" id="up-trainvid" />
+                                        <video class="vid-wrap active" controls id="input-video"></video>
+                                        <div class="icon-area  d-none">
+                                            <span class="butn main-butn bordered">ارفع فيديو</span>
+                                        </div>
+                                        <div class="del-vid">
+                                            <img class="w-100" src="https://plus.yallaryada.net/front/imgs/icons/trash.svg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -354,7 +413,7 @@
                     </div>
                     <div class="col-lg-12 col-12">
                         <form method="POST" id="update-description-form">
-                            <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_token" value="Yx1FlxWupBh3hErpg4aft2pPfUJzX5mX90jTAIt9">                            <input type="hidden" name="_method" value="POST">
                             <h6 class="mb-0 h6 text-right d-flex">
                                 <i class="fa fa-info-circle ml-2" style="color: #fa5d5b;font-size:22px"></i>
                                 <label>وصف التمرين :</label>
@@ -507,14 +566,15 @@
                         </div>
                     </div>
                                         <section class="pt-3 pb-4 w-100 d-block prog-all-days">
-               
+
+                        
                             <div class="d-block w-100 pb-5 txt-lg-left txt-sm-center mini form-group add-day-body">
                                 
                                 <div class="w-100 add-day-body">
                                     <a class="d-inline-block butn link-butn mt-3 mr-2 mb-2 add-day-body"
                                         data-toggle="modal" href="#trainigsLibrary">
                                         <span class="mr-3"><i class="fas fa-plus not"></i></span><span>اضافة
-                                            وجبة</span>
+                                            تمرين</span>
                                     </a>
                                 </div>
                             </div>
