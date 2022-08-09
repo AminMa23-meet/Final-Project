@@ -1,0 +1,1213 @@
+)
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#FA5D5B">
+    <title>يلا رياضة</title>
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/video-js.min.css">
+
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/jquery-ui.min.css">
+    
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/select2.min.css">
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/main.css">
+    <link type="text/css" rel="stylesheet" href="https://plus.yallaryada.net/front/css/rtl.css">
+    <link rel="stylesheet" href="https://plus.yallaryada.net/css/custom.css">
+    <link rel="shortcut icon" href="https://plus.yallaryada.net/front/imgs/icon.ico">
+    <style>
+        .trains-type-list::-webkit-scrollbar {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <div class="modal fade" tabindex="-1" id="addNewUser" aria-labelledby="addNewUserLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                                                  aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0">
+                <p class="w-100 second-text mb-4 h5 text-center">من فضلك قم بادخال بيانات المستخدم</p>
+                <form method="post" action="https://plus.yallaryada.net/users" class="row">
+                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                    <div class="form-group col-12">
+                        <label>ايميل المستخدم</label>
+                        <input name="email" class="form-control pt-1 pb-1 w-100 radius-15 " type="email" required>
+                    </div>
+                    <div class="form-group col-12">
+                        <label>البرنامج</label>
+                        <select name="program_id" class="w-100 form-control mini select-2" required>
+                            <option value="" selected disabled>اختر البرنامج</option>
+                                                            <option value="42">SUI</option>
+                                                            <option value="43">aspfiaspfhi</option>
+                                                    </select>
+                    </div>
+                    <div class="col-12">
+                        <input class="w-100 mt-3 butn main-butn mt-3" type="submit" value="حفظ المستخدم">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer border-0"></div>
+        </div>
+    </div>
+</div>
+    <div class="modal fade" tabindex="-1" id="DayVidInfoModal" aria-labelledby="mainImgInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-3 text-center">
+                        <div class="h5">الڤيديو اليومي</div>
+                    </div>
+                    <div class="col-12"><img class="w-100" src="https://plus.yallaryada.net/front/imgs/video.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="resetInfoModal" aria-labelledby="mainImgInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-3 text-center">
+                        <div class="h5">يوم راحة ؟</div>
+                        <div class="h4 second-text mt-3">عند التأكيد سيتم حذف جمييع التمارين المتعلقة بهذا اليوم
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="butn main-butn btn-submit">تأكيد</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="MessageInfoModal" aria-labelledby="mainImgInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-3 text-center">
+                        <div class="h5">الرسالة التشجيعية</div>
+                    </div>
+                    <div class="col-12"><img class="w-100" src="https://plus.yallaryada.net/front/imgs/video.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="frequencyInfoModal" aria-labelledby="mainImgInfoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-3 text-center">
+                        <div class="h5">النص الأول</div>
+                    </div>
+                    <div class="col-12"><img class="w-100" src="https://plus.yallaryada.net/front/imgs/video.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" id="unitInfoModal" aria-labelledby="mainImgInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-3 text-center">
+                        <div class="h5">النص الثاني</div>
+                    </div>
+                    <div class="col-12"><img class="w-100" src="https://plus.yallaryada.net/front/imgs/video.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="deleteExerciseModal" aria-labelledby="mainImgInfoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-3 text-center">
+                        <div class="h5">حذف تمرين</div>
+                        <div class="h4 second-text mt-3">هل انت متأكد من حذف تمرين ؟
+                        </div>
+                    </div>
+                </div>
+                <form id="delete-form" method="post" action="https://plus.yallaryada.net/exercises/delete">
+                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                    <input type="hidden" name="id" id="delete-form-id">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="delete-form" class="butn main-butn">تأكيد</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="saveInfoModal" aria-labelledby="mainImgInfoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-3 text-center">
+                        <div class="h5">حفظ معلومات اليوم</div>
+                        <div class="h4 second-text mt-3">قد يكون هناك بعض الحقول لم يتم ملؤها، هل انت متأكد من الحفظ ؟
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="butn main-butn btn-submit">تأكيد</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="trainigsLibrary" aria-labelledby="trainigsLibraryLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close" id="close-clear-form">&times;</a></div>
+            <div class="modal-body border-0">
+                <form id="save-from-lib" class="w-100 row m-0" method="post">
+                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                    <input type="hidden" name="selected-id">
+                    <div class="col-12 mb-4 text-center">
+                        <div class="h5">مكتبة تمارين يلا رياضة</div>
+                    </div>
+                    <div class="col-lg-8 col-12 form-group"><input class="form-control f-normal grey-bg ico mini"
+                            type="text" name="lib-search" placeholder="ابحث عن تمرين.." /><i
+                            class="fas fa-search mini"></i></div>
+                    <div class="col-lg-4 col-12 form-group d-fixed">
+                        <input class="w-100 d-block butn main-butn mr-2 mb-2 disabled" type="submit" value="اختيار"
+                            id="btn-lib-save" disabled="disabled" />
+                    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5887">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5887" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/675/NmH0Wy24VuWDmQwNFqB9sEge3yfjatlTm8eCrvd9Y7oEjnQKiX4763334b98c224d300f6d727ae24195a.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">{{loaded['parsed'][0]['food']['label']}}</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5888">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5888" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/677/JfAuIhJ47j6In2vhuU2GWkQQzv5DV3cXlbrLzKqNa27OQWwVHq969af25776b178010d72cf5894ba226b.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">standing lateral stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5889">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5889" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/679/yBCe8SzDPUg8uYAzO2uqinYNH3VLoh6UN77bj2eyAbQYXaEQsH3e05345ea6987c300e1c5983d14a8027.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">standing hamstring stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5890">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5890" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/681/gmmUzAWp1GLbbgKMy4YScDlP6nFBWHM4X8B1NYs72Lyxvu886u58ff35536b1f73827f18fd7dbaead30e.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">standing hamstring calf stretch with strap</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5891">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5891" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/683/avbEHIRS6BDVMcEjs3OQBVebsKCYMjKMAxPHjvH8IkgjPyWIFQfc913500f5f47f2202a2b71e94ffc3d6.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">standing gastrocnemius calf stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5892">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5892" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/685/QGc5kgw9RaOmulstK2yNC7cUzC4VZ3g36eEX0toGcvKNEXGFY261bdc5e3f1ab3c16dc5ae318ac6e39cb.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">standing adductor stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5893">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5893" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/687/foXJ7SzTLzEae63dXDdnOeVQDpJe94lxXoPph3fC5ntvMLUAu7befa400202aa4f5a30378cc260b8715d.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">spine stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5894">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5894" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/689/7v9sg5BLVi8AAEeHt7hXNqb6mjl10HmVqHUEEdeP9jgv51vO0x73b62d357d8a8aab3581c2390cb1845d.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">slopes toward stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5895">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5895" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/691/qruwmP0hx1lUHdQ8zmLQP0Ogpec2dT6DwQYUuhelmUJTWRX1S0741ffb673168f79a6edeaa6af55fdb51.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">side wrist pull stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5896">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5896" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/693/JeSEVPgKi97eRGfyEpyYRA5yY1khPOHzhuPjC30niMWRc5ODAmd68a5d3565c6cbacf9b81d70e1fe7bf6.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">side stretch crunch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5897">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5897" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/695/dMYZfh9gYZ3bOdNIKp4DlKpi4COTp1HSyMudpGNOQPKcNRhVU817ea5f1764d6b62432b14063a5088a33.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">side push neck stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5898">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5898" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/697/Z2WVdXzkxqYCQz2UsPyV2lYcvSAVx7zziwss0OQ08NxamvXKd6ae3c47a954a83acefb227cece79c2676.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">side lying floor stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5899">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5899" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/699/tTT1lccWNA2qwgNViOLkeuzXKY14XaW1VQWRtPOqYJ8hh2H72R7fdf05a17dd502d7d779c2d7230190b2.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">shoulder stretch behind the back</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+    <div class="col-12 item mb-2 pos-relative" data-video-id="5900">
+        <input class="aa-check video-train-check" type="radio" name="train[]" value="5900" />
+        <div class="img d-inline-block mr-2" style="width:92px;">
+                            <img class="w-100" src="https://admin.yallaryada.net/storage/701/BxwMznGhjYPFhkMH5D0mEtaOyIusdIyHE7k4WTpohJhlU7mEu7940c636a3f42c7bc491cd9859d0884f8.gif" style="height:50px; object-fit: cover" alt="thumbnail">
+                    </div>
+        <div class="cont d-inline-block">
+            <div class="ti f-bold mb-2">seated straight leg calf stretch</div>
+            <div class="desc">
+                -
+            </div>
+        </div>
+    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="modal fade" tabindex="-1" id="uploadTrainigForm" aria-labelledby="uploadTrainigFormLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0"
+                        data-dismiss="modal" aria-label="Close">&times;</a></div>
+                <div class="modal-body border-0">
+                    <form class="w-100 row m-0" method="post" action="https://plus.yallaryada.net/exercises/812/store"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                        <div class="col-12 mb-4 text-center">
+                            <div class="h5">تحميل تمرين</div>
+                        </div>
+                        <div class="col-12 mb-3 txt-lg-right">
+                            <input class="d-lg-inline-block d-block butn main-butn" type="submit"
+                                value="تم الاختيار" />
+                        </div>
+                        <div class="col-12">
+                            <div class="d-block w-100 grey-bg radius-11 pt-3 pb-3 pr-2 pl-2 training-item">
+                                <div class="w-100 row m-0">
+                                    <div class="col-lg-6 col-12 mini form-group">
+                                        <div class="d-block mini form-group">
+                                            <label class="w-100">عنوان التمرين</label>
+                                            <input required name="title" class="w-100 form-control mini"
+                                                type="text" placeholder="..تمرين بطن" />
+                                        </div>
+                                        <div class="d-block mini form-group">
+                                            <label class="w-100">النص</label>
+                                            <input required class="w-100 form-control mini" type="text"
+                                                name="frequency" placeholder="جولات, تكرارت, 12x4 ..." />
+                                        </div>
+                                        <div class="d-block mini form-group">
+                                            <label class="w-100">وصف التمرين</label>
+                                            <textarea required name="description" class="w-100 form-control mini" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12 mini form-group">
+                                        <div class="w-100 mb-3 second-text"><span>ملف التمرين</span></div>
+                                        <div class="d-block w-100 upload-vid w-100 white-bg text-center upload-file">
+                                            <input name="exercise_file" type="file" id="up-trainvid" />
+                                            <video class="vid-wrap" controls></video>
+                                            <div class="icon-area"><span class="butn main-butn bordered">ارفع
+                                                    فيديو</span></div>
+                                            <div class="del-vid d-none"><img class="w-100"
+                                                    src="https://plus.yallaryada.net/front/imgs/icons/trash.svg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" tabindex="-1" id="editTrainigForm" aria-labelledby="editTrainigFormLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0">
+                <form class="w-100 row m-0" method="post" action="https://plus.yallaryada.net/exercises/update"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                    <input type="hidden" name="id" id="input-id">
+                    <div class="col-12 mb-4 text-center">
+                        <div class="h5">تعديل تمرين</div>
+                    </div>
+                    <div class="col-12 mb-3 txt-lg-right">
+                        <input class="d-lg-inline-block d-block butn main-butn" type="submit" value="تم التعديل" />
+                    </div>
+                    <div class="col-12">
+                        <div class="d-block w-100 grey-bg radius-11 pt-3 pb-3 pr-2 pl-2 training-item">
+                            <div class="w-100 row m-0">
+                                <div class="col-lg-6 col-12 mini form-group">
+                                    <div class="d-block mini form-group">
+                                        <label class="w-100">عنوان التمرين</label>
+                                        <input id="input-title" required name="title"
+                                            class="w-100 form-control mini" type="text"
+                                            placeholder="..تمرين بطن" />
+                                    </div>
+                                    <div class="d-block mini form-group">
+                                        <label class="w-100">النص</label>
+                                        <input id="input-frequency" required class="w-100 form-control mini"
+                                            type="text" name="frequency" placeholder="جولات, تكرارت, 12x4 .." />
+                                    </div>
+                                    <div class="d-block mini form-group">
+                                        <label class="w-100">وصف التمرين</label>
+                                        <textarea id="input-description" required name="description" class="w-100 form-control mini" rows="4"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 mini form-group">
+                                    <div class="w-100 mb-3 second-text"><span>ملف التمرين</span></div>
+                                    <div class="d-block w-100 upload-vid w-100 white-bg text-center upload-file">
+                                        <input name="exercise_file" type="file" id="up-trainvid" />
+                                        <video class="vid-wrap active" controls id="input-video"></video>
+                                        <div class="icon-area  d-none">
+                                            <span class="butn main-butn bordered">ارفع فيديو</span>
+                                        </div>
+                                        <div class="del-vid">
+                                            <img class="w-100" src="https://plus.yallaryada.net/front/imgs/icons/trash.svg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="mainTrainings" aria-labelledby="mainTrainingsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-4 text-center">
+                        <div class="h5">تحميل ملف التمرين</div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <a class="d-block butn main-butn mr-2 mb-2" href="#trainigsLibrary" data-toggle="modal"
+                            id="lib-modal"><span>تحميل من مكتبة تمارين يلا رياضة</span></a>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <a class="d-block butn link-butn mr-2 mb-2" href="#uploadTrainigForm"
+                            data-toggle="modal"><span>تحميل تمرين من جهازك</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" id="trainigsType" aria-labelledby="mainTrainingsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-4 text-center">
+                        <div class="h5">إختر نوع التمرين</div>
+                    </div>
+                    <div class="col-lg-12 col-12">
+                        <a class="d-block butn link-butn mr-2 mb-2" href="#" id="add-normal"
+                            data-toggle="modal">
+                            <span class="mr-3"><img
+                                    src="https://plus.yallaryada.net/front/imgs/icons/arrows.png" /></span><span>تمرين
+                                عادي</span>
+                        </a>
+                    </div>
+                    <!--<div class="col-lg-6 col-12">-->
+                    <!--    <a class="d-block butn link-butn mr-2 mb-2" href="#"-->
+                    <!--        id="add-superset"-->
+                    <!--        data-toggle="modal">-->
+                    <!--        <span class="mr-3"><img-->
+                    <!--                src="https://plus.yallaryada.net/front/imgs/icons/clock.png" /></span><span>عد تنازلي</span>-->
+                    <!--    </a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="descriptionUpdateForm" aria-labelledby="descriptionUpdateFormArea"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content pb-1">
+            <div class="modal-header border-0"><a class="f-big main-hover close fl-right m-0" data-dismiss="modal"
+                    aria-label="Close">&times;</a></div>
+            <div class="modal-body border-0 text-center">
+                <div class="w-100 row m-0">
+                    <div class="col-12 mb-4 text-center">
+                        <div class="h5">أضف وصف للتمرين</div>
+                    </div>
+                    <div class="col-lg-12 col-12">
+                        <form method="POST" id="update-description-form">
+                            <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                            <input type="hidden" name="_method" value="POST">
+                            <h6 class="mb-0 h6 text-right d-flex">
+                                <i class="fa fa-info-circle ml-2" style="color: #fa5d5b;font-size:22px"></i>
+                                <label>وصف التمرين :</label>
+
+                            </h6>
+                            <p class="text-right" style="color: #aaa; font-size: 16px;font-weight: lighter">مثال:
+                                جولات, تكرارت, 12x4 ...</p>
+                            <div class="d-block mini form-group text-right">
+                                <textarea id="input-updated-description" required name="description" class="w-100 form-control mini" rows="4"></textarea>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <!--<div class="col-lg-6 col-12">-->
+                    <!--    <a class="d-block butn link-butn mr-2 mb-2" href="#"-->
+                    <!--        id="add-superset"-->
+                    <!--        data-toggle="modal">-->
+                    <!--        <span class="mr-3"><img-->
+                    <!--                src="https://plus.yallaryada.net/front/imgs/icons/clock.png" /></span><span>عد تنازلي</span>-->
+                    <!--    </a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input class="w-100 d-block butn main-butn mr-2 mb-2" type="submit" value="تأكيد"
+                    id="btn-description-save" />
+            </div>
+        </div>
+    </div>
+</div>
+    <section class="main-wrapper">
+
+        <div class="container-fluid h-100 p-0">
+            <div class="main-wrapper-row h-100 m-0">
+
+                <div class="d-lg-block side-bar p-0">
+                    <div class="h-100 side-wrapper white-bg"><span class="close-bar d-lg-none d-inline-block"><i
+            class="fas fa-times f-medium font-text"></i></span>
+
+    <div class="w-100 side-wrapper-content">
+        <div class="d-inline-block user "><a class="nav-linkp-0" href="https://plus.yallaryada.net/profile"><span
+                    class="icon mr-2"><img
+                        class="w-100 d-block" src="https://plus.yallaryada.net/front/imgs/logo.png"></span><span
+                    class="name d-block">amin</span></a></div>
+        <div class="w-100 side-contnet def-border-top pt-3">
+
+            <ul class="list-unstyled side-menu">
+                <li class="side-item w-100">
+                    <a class="d-block font-text"
+                       href="https://plus.yallaryada.net/home">
+            <span class="d-inline-block icon">
+                <img src="https://plus.yallaryada.net/front/imgs/icons/home.svg">
+            </span>
+                        <span class="title">لوحة القيادة</span>
+                    </a>
+                </li>
+
+                <li class="side-item w-100">
+                    <a class="d-block font-text"
+                       href="https://plus.yallaryada.net/programs">
+            <span class="d-inline-block icon">
+                <img src="https://plus.yallaryada.net/front/imgs/icons/programs.svg">
+            </span>
+                        <span class="title">برامج</span>
+                    </a>
+                </li>
+
+                                    <li class="side-item w-100">
+                        <a class="d-block font-text "
+                           href="https://plus.yallaryada.net/messages">
+            <span class="d-inline-block icon">
+                <img src="https://plus.yallaryada.net/front/imgs/icons/message.svg"></span>
+                            <span class="title">الرسائل</span>
+                        </a>
+                    </li>
+<!--
+                    <li class="side-item w-100">
+                        <a class="d-block
+              font-text "
+                           href="https://plus.yallaryada.net/notifications">
+            <span class="d-inline-block icon">
+                <img src="https://plus.yallaryada.net/front/imgs/icons/bell.svg"></span>
+                            <span class="title">الاشعارات</span>
+                        </a>
+                    </li>
+-->                    
+
+                    <li class="side-item w-100">
+                        <a class="d-block font-text "
+                           href="https://plus.yallaryada.net/users">
+            <span class="d-inline-block icon">
+                <img src="https://plus.yallaryada.net/front/imgs/icons/chart.svg"></span>
+                            <span class="title"> المتدربين</span>
+                        </a>
+                    </li>
+                
+                <li class="side-item w-100"><a class="d-block font-text" href="https://plus.yallaryada.net/logout"><span
+                            class="d-inline-block icon"><img
+                                src="https://plus.yallaryada.net/front/imgs/icons/programs.svg"></span><span
+                            class="title">تسجيل الخروج</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+                </div>
+                <div class="main-content p-0">
+
+                    <nav class="d-flex align-items-lg-center w-100 top-bar">
+
+    <ul class="navbar-nav mr-auto p-0 d-inline-block">
+        <li class="d-inline-block nav-item">
+            <a class="nav-link d-lg-block d-none toggle-sidebar"
+               href="#"><img src="https://plus.yallaryada.net/front/imgs/icons/menu.svg"></a>
+            <a class="nav-link d-lg-none d-block hide-sidebar" href="#">
+                <img src="https://plus.yallaryada.net/front/imgs/icons/menu.svg"></a>
+        </li>
+    </ul>
+
+    <ul class="topbar-main-content fl-lg-right">
+        <li class="width-xs-100 d-lg-inline-block d-none nav-item order-lg-1 order-4"><a
+                class="nav-link main-text mr-3 f-bold view-progs"
+                href="https://plus.yallaryada.net/programs">عرض جميع
+                البرامج</a></li>
+                    <li class="width-xs-100 d-lg-inline-block d-block nav-item order-lg-2 order-3">
+                <a class="width-xs-50 butn main-butn bordered mr-lg-3 mr-1 mb-lg-0 mb-3 pt-2 pb-2 pr-lg-3 pl-lg-3 pr-0 pl-0"
+                   href="https://plus.yallaryada.net/users">
+                    <span class="f-small">متابعة اداء المتدربين</span></a>
+
+                <a class="width-xs-50 butn main-butn mr-lg-3 mr-1 mb-lg-0 mb-3 pt-2 pb-2 pr-lg-3 pl-lg-3 pr-0 pl-0"
+                   href="https://plus.yallaryada.net/programs/create"><span class="f-small">اضف برنامج جديد</span></a>
+
+                <a class="width-xs-100 butn link-butn mr-lg-3 mr-1 ml-lg-3 mb-lg-0 mb-3 pt-2 pb-2 pr-lg-3 pl-lg-3 pr-0 pl-0"
+                   href="#addNewUser" data-toggle="modal"><span class="mr-3 f-small">
+                        <i class="fas fa-user-plus"></i></span>
+                    <span class="f-small">اضف مستخدم جديد</span></a>
+            </li>
+                    </ul>
+
+</nav>
+                    <div class="w-100 d-none d-block pr-2 pl-2 pt-4 pb-4  txt-center sub-top-bar">
+                        <a class="h3 p-3 d-inline-block back-butn" href="https://plus.yallaryada.net/programs/43/days">
+                            <img class="w-100" src="https://plus.yallaryada.net/front/imgs/icons/arrow-left.svg"></a>
+                    </div>
+                    <div class="w-100 head-bar mb-4">
+                        <div class="head-title"><span class="icon mr-3"><img class="w-100"
+                                    src="https://plus.yallaryada.net/front/imgs/icons/programs.svg"></span><span>يوم
+                                1
+                                (aspfiaspfhi)</span>
+                        </div>
+                    </div>
+                                        <section class="pt-3 pb-4 w-100 d-block prog-all-days">
+                        <form id="day-form" method="post" action="https://plus.yallaryada.net/days/812/update" class="row m-0"
+                            enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">
+                            <div class="col-12 dis-flex align-items-start mb-4">
+                                <div class="switch-cont d-inline-block mr-3">
+                                    <div class="h5 mb-2 black-text">يوم راحة</div>
+                                    <div class="f-small mb-2">اضافة يوم يفصل بين التمارين</div>
+                                </div>
+                                <div class="switch d-inline-block pr-3 pl-3">
+                                    <input class="aa-switch-check big" type="checkbox" name="rest"
+                                        >
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <div class="w-100 d-block form-group">
+                                    <div class="w-100 mb-3 second-text"><span class="mr-3">الڤيديو
+                                            اليومي</span><span class="d-inline-block mouse" data-toggle="modal"
+                                            data-target="#DayVidInfoModal"><i
+                                                class="fas fa-info-circle not main-text"></i></span>
+                                    </div>
+                                    <div class="d-block w-100 upload-vid upload-area-h">
+                                                                                    <input name="day_teaser" type="file" id="up-vid">
+                                            <div class="icon-area "><span class="butn main-butn bordered">ارفع
+                                                    فيديو</span>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="d-block w-100 mini p-0 mb-2 form-group">
+                                    <label class="w-100">فكرة عن اليوم</label>
+                                    <textarea name="description" class="w-100 form-control mini" rows="8"
+                                        placeholder="..اشرح تمرين اليوم في عدة كلمات"></textarea>
+                                </div>
+                                <div class="d-block w-100 mini p-0 mb-2 form-group">
+                                    <label class="w-100">الرسالة التشجيعية (اختياري)
+                                        <span class="d-inline-block mouse" data-toggle="modal"
+                                            data-target="#MessageInfoModal"><i
+                                                class="fas fa-info-circle not main-text"></i></span>
+                                    </label>
+                                    <textarea name="promotion_message" class="w-100 form-control mini" rows="8"
+                                        placeholder="..اكتب كلمات مختصرة تشجع بها متدربينك"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 pt-4" id="day-trainings">
+                                <div class="d-block w-100 mini form-group">
+                                    <label class="w-100">التمارين الرياضية</label>
+                                </div>
+                                <div class="row mr-0 ml-0 w-100 day-trainings-list add-day-body" id="day-trainings-list"
+                                    data-id="812">
+                                    <input type="hidden" name="_token" value="uu6WVQzTJCq0o9QtoFADMAyiSxZATFzF0Z8FbqVm">                                    
+
+                                                                    </div>
+                            </div>
+
+                            <div class="d-block w-100 pb-5 txt-lg-left txt-sm-center mini form-group add-day-body">
+                                
+                                <div class="w-100 add-day-body">
+                                    <a class="d-inline-block butn link-butn mt-3 mr-2 mb-2 add-day-body"
+                                        data-toggle="modal" href="#trainigsType">
+                                        <span class="mr-3"><i class="fas fa-plus not"></i></span><span>اضافة
+                                            تمرين</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-2 col-lg-3 col-12">
+                                <a id="btn-save" data-toggle="modal" data-target="#saveInfoModal"
+                                    class="w-100 mt-3 butn main-butn mt-3 text-white">حفظ</a>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/popper.min.js"></script>
+
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/chart.min.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/fontawesome.min.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/select2.min.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/video.min.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/main.js"></script>
+<script type="text/javascript" src="https://plus.yallaryada.net/front/js/ltr.js"></script>
+<script> var hid = 'false';</script>
+    
+    <script>
+        function handleOnScroll() {
+            let query = $('input[name=lib-search]').val();
+            const startId = $('#lib-videos [data-video-id]:last-child').data('video-id');
+            let selected = $('input[name=train-type]:checked').val();
+            if (query === "") {
+                query = 'all';
+            }
+            if (!selected) {
+                selected = 0;
+            }
+            // if (!$(`#lib-videos`).has(`#loading-videos`).length)
+            $(`#lib-videos`).append(loadingTemplate);
+            // console.log(selected);
+            $.get('/videos/' + query + '/data/' + startId + '/' + selected, function() {
+
+            }).then(function(data) {
+                $(`#loading-videos`).remove();
+                $(`#lib-videos`).append(data);
+            });
+
+        }
+
+        function handleSearch() {
+            let query = $('input[name=lib-search]').val();
+            let selected = $('input[name=train-type]:checked').val();
+
+            if (query === "") {
+                query = 'all';
+            }
+            if (!selected) {
+                selected = 0;
+            }
+
+            $.get('/videos/' + query + '/data/' + 0 + '/' + selected, function() {
+                $('#loading-videos-text').show();
+                $('#lib-videos').hide();
+                $('#lib-videos').empty();
+            }).then(function(data) {
+                $('#loading-videos-text').hide();
+                $('#lib-videos').show();
+                if (data === "") {
+                    $('#lib-videos').append(emptyTemplate);
+                } else {
+
+                    $('#lib-videos').append(data);
+                }
+            });
+
+            // console.log(selected);
+            // $.get('/videos/' + query + '/data/' + 0 + '/' + selected)
+        }
+
+        $('input[name=lib-search]').keyup(debounce(function() {
+
+            handleSearch();
+        }, 600));
+
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this,
+                    args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        };
+
+        $(document).on('click', '#close-clear-form', function() {
+            $('input[name=lib-search]').val('');
+            $('input[name=train-type]:checked').parent().removeClass(
+                'tag-class-active');
+            $('input[name=train-type]:checked').attr('checked', false);
+        });
+
+        $(document).on('click', '#lib-modal', function() {
+            handleSearch();
+        });
+
+
+
+        $(document).on('click', '#train-type-parent', function() {
+
+            $(this).toggleClass('tag-class-active');
+
+            let input_value = $(this).children('input[name=train-type]');
+            input_value.attr('checked', (_, attr) => {
+                return !attr;
+            });
+
+            $(this).siblings().removeClass(
+                'tag-class-active').children('input[name=train-type]').attr('checked', false);
+
+            handleSearch();
+        });
+
+        $(`#trainigsLibrary`).on('shown.bs.modal', function() {
+            $(`#lib-videos`).off()
+            $(`#lib-videos`).on('scroll', function() {
+                var container = document.getElementById('lib-videos')
+                if (container.offsetHeight + container.scrollTop >= container.scrollHeight - 1) {
+                    handleOnScroll();
+                }
+            })
+        });
+
+
+
+        $(document).on('click', '.btn-submit', function() {
+            $("#day-form").submit();
+        });
+
+        $(document).on('click', '.btn-edit-exer', function() {
+            let id = $(this).data('id');
+            let title = $(this).data('title');
+            let frequency = $(this).data('frequency');
+            let description = $(this).data('description');
+            let video = $(this).data('video');
+
+            $("#input-id").val(id);
+            $("#input-title").val(title);
+            $("#input-frequency").val(frequency);
+            $("#input-description").val(description);
+
+            let vid_selector = document.getElementById('input-video');
+            let source = document.createElement('source');
+
+            source.setAttribute('src', video);
+            source.setAttribute('type', 'video/mp4');
+
+            vid_selector.appendChild(source);
+            vid_selector.play();
+        });
+
+        $(document).on('click', '.btn-delete', function() {
+            let id = $(this).data('id');
+            $("#delete-form-id").val(id);
+        });
+
+        // $(document).on('change keydown keyup', 'input[name=lib-search]', function() {
+        //     let query = $(this).val();
+        //     let checkboxes = $('input[name=train-type]:checked');
+        //     let selected = [];
+        //     checkboxes.each(function() {
+        //         selected.push($(this).val());
+        //     })
+        //     console.log(selected);
+        //     if (query.length < 3) {
+        //         query = 'all';
+        //     }
+
+        //     if (query.length > 2) {
+        //         $.get('/videos/' + query + '/data/' + selected, function() {
+        //             // $('#lib-videos').html(data);
+        //             // $('#lib-videos').html('<h1> loading</h1>');
+        //             $('#loading-videos').show();
+        //             $('#lib-videos').hide();
+        //             console.log('show loading');
+        //         }).done(function(data) {
+        //             console.log('hide loading');
+        //             $('#loading-videos').hide();
+
+        //             $('#lib-videos').show();
+        //             $('#lib-videos').html(data);
+        //         });
+        //     }
+        // });
+
+        // $(document).on('click', '#train-type-parent', function() {
+
+        //     $(this).toggleClass('tag-class-active');
+
+        //     let input_value = $(this).children('input[name=train-type]');
+        //     input_value.attr('checked', true);
+
+        //     $(this).siblings().not('.tag-class-active').removeClass(
+        //         'tag-class-active').children('input[name=train-type]').attr('checked', false);
+
+
+        //     let query = $('input[name=lib-search]').val();
+        //     let checkboxes = $('.tag-class-active').children('input[name=train-type]:checked');
+        //     let selected = [];
+
+        //     checkboxes.each(function() {
+        //         selected.push($(this).val());
+        //     })
+
+        //     console.log(selected);
+        //     if (query.length < 3) {
+        //         query = 'all';
+        //     }
+
+        //     if (query.length > 2) {
+        //         $('#loading-videos').show();
+        //         $('#lib-videos').hide();
+        //         $.get('/videos/' + query + '/data/' + selected, function() {
+        //             // $('#lib-videos').html(data);
+        //             // $('#lib-videos').html('<h1> loading</h1>');
+
+        //             // console.log('show loading');
+        //         }).done(function(data) {
+        //             // console.log('hide loading');
+        //             $('#loading-videos').hide();
+
+        //             $('#lib-videos').show();
+        //             $('#lib-videos').html(data);
+        //         });
+        //     }
+        // });
+
+        $(document).on('change', '.video-train-check', function() {
+            let exer_id = $(this).val();
+            $("input[name=selected-id]").val(exer_id);
+            $("#btn-lib-save").attr("disabled", false).removeClass('disabled');
+        });
+
+
+        $(document).on('click', '#btn-lib-save', function(e) {
+            e.preventDefault();
+
+            $(`#trainigsLibrary`).modal('toggle')
+
+            let video_id = $("input[name=selected-id]").val();
+            let descriptionEl = $(`[data-video-id="${video_id}"]`).children('.cont.d-inline-block')
+                .children(
+                    '.desc');
+            let descriptionVal = $(descriptionEl).html().trim();
+            let action = '/videos/' + 812 + '/store/' + video_id;
+
+            $(`#input-updated-description`).text(descriptionVal);
+            $(`#descriptionUpdateForm`).modal('toggle')
+
+            $(`#update-description-form`).append(
+                `<input type="hidden" name="video_id" value="${video_id}" />`);
+            $(`#update-description-form`).attr('action', action);
+
+        });
+
+        $(`#btn-description-save`).on('click', function(e) {
+            e.preventDefault();
+            $(`#descriptionUpdateForm`).modal('toggle')
+            $(`#update-description-form`).submit();
+        });
+
+        function sortRows() {
+            $("#day-trainings").sortable({
+                items: "div.exercise-group",
+                update: function(event, ui) {
+                    $('.sequence').each(function(n) {
+                        $(this).val(n)
+                    });
+                }
+            });
+
+            // console.log($('#day-trainings').sortable());
+        }
+
+        $(function() {
+            sortRows();
+
+            $('.videos').click(function() {
+                $('.videos').css({
+                    'border': '2px solid #E1E1E1'
+                }).remove('video-selected');
+                $(this).css({
+                    'border': '2px solid red'
+                });
+                $(this).addClass('video-selected');
+                var action = $('#video_selected_form').attr('action').split('-987')[0] + $(this)
+                    .find(
+                        '.video-id').val();
+                $('#video_selected_form').attr({
+                    'action': action
+                });
+            });
+        })
+
+        $(document).on('change', 'input[name=rest]', function() {
+            $(".add-day-body").toggle();
+            let btn = $("#btn-save");
+            let target = btn.data('target');
+            if (target === '#saveInfoModal') {
+                btn.attr('data-target', '#resetInfoModal');
+            } else {
+                btn.attr('data-target', '#saveInfoModal');
+            }
+        });
+
+        $(function() {
+            var container = $('#day-trainings-list');
+            $('#add-normal , #add-superset').on('click', function() {
+                if (container.children().length == 0) {
+                    container.append(`<div class="col-12 item mb-3" id="emptyExercise">
+                                    <div class="w-100 row mr-0 ml-0 wrap">
+                                    <div class="col-lg-11 col-10 align-items-center d-flex over-hidden">
+                                    <div class="ico d-inline-block"><i class="fas fa-bars"></i></div>
+                                    <div class="img d-inline-block mr-2">
+                                        <video class="p-2" style="width: 100px;">
+                                            <source src="#" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="cont d-inline-block">
+                                        <div class="ti f-bold mb-2">عنوان التمرين</div>
+                                        <div class="desc">
+                                            وصف التمرين
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="ti f-bold mb-2">عدد التكرارات</div>
+                                    </div>
+                                    </div>
+                                    <div class="col-lg-1 col-2">
+                                    <div class="row mr-0 ml-0">
+
+                                        <div class="col-12 text-center p-0">
+                                            <a data-id="id"
+                                                class="d-inline-block p-2 main-text  btn-edit-exer"
+                                                data-toggle="modal"
+                                                href="#mainTrainings" ><i
+                                                    class="fas fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>`)
+
+                } else {
+                    $('#mainTrainings').modal();
+                }
+            })
+        });
+
+
+        // $(`#trainigsLibrary`).on('shown.bs.modal', function() {
+        //     $(`#lib-videos`).off()
+        //     $(`#lib-videos`).on('scroll', function() {
+        //         var container = document.getElementById('lib-videos')
+        //         if (container.offsetHeight + container.scrollTop >= container.scrollHeight) {
+        //             var id = $(`[data-video-id]`).last().data('video-id');
+        //             if (!$(`#lib-videos`).has(`#loading-videos`).length)
+        //                 $(`#lib-videos`).append(loadingTemplate);
+        //             handleEvent(id)
+        //         }
+        //     })
+        // })
+
+
+
+        // function handleEvent(id) {
+        //     var token = $(`input[name="_token"]`).val()
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: window.location.origin + `/videos/next/records/${id}`,
+        //         data: {
+        //             _token: token
+        //         }
+        //     }).done(function(data) {
+        //         $(`#lib-videos`).append(data);
+        //         if ($(`#lib-videos`).has(`#loading-videos`).length)
+        //             $(`#loading-videos`).remove()
+        //     });
+
+        // }
+
+        var loadingTemplate = `<div class="col-12 item justify-content-center" id="loading-videos">
+                <div class="lds-facebook">
+                    <div class="lds-facebook-dark"></div>
+                    <div class="lds-facebook-dark"></div>
+                    <div class="lds-facebook-dark"></div>
+                </div>
+            </div>`;
+
+        var emptyTemplate = `<div class="col-12 item justify-content-center" id="empty-videos">
+                لا يوجد نتائج لعرضها
+            </div>`;
+    </script>
+</body>
+</html>
