@@ -46,11 +46,9 @@ def signup():
     if request.method == 'POST':
        email = request.form['email']
        password = request.form['password']
-       full_name = request.form['full_name']
-       username = request.form['username']
-       bio = request.form['bio']
+       full_name = request.form['name']
 
-       user = {"full_name": full_name, "username": username,"bio":bio,"email":email,"password":password}
+       user = {"full_name": full_name,"email":email,"password":password}
        try:
             login_session['user'] =  auth.create_user_with_email_and_password(email, password)
             db.child("Users").child(login_session['user']['localId']).set(user)
@@ -74,14 +72,17 @@ def home():
     url = "https://recipesapi2.p.rapidapi.com/recipes/" + search
     querystring = {"maxRecipes":"10"}
     headers = {
-      "X-RapidAPI-Key": "2b11651568msh9571703c4f17240p1143bdjsne194a2b10d31",
-      "X-RapidAPI-Host": "recipesapi2.p.rapidapi.com"
+        "X-RapidAPI-Key": "4111e88e2cmsh831da18c52df3c3p13d467jsn924dd21f6552",
+        "X-RapidAPI-Host": "recipesapi2.p.rapidapi.com"
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
     print(response.text)
     loaded = json.loads(response.text)
-    leng = len(loaded['data'])
-    return render_template('index.html',loaded = loaded, leng = leng, translator = translator)
+    if "data" in loaded:
+      leng = len(loaded['data'])
+      return render_template('index.html',loaded = loaded, leng = leng, translator = translator)
+    else:
+      return render_template('index1.html')
   return render_template('index1.html')
 
 if __name__ == '__main__':

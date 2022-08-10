@@ -1,65 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Signup</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#FA5D5B">
+    <title>يلا رياضة</title>
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/video-js.min.css">
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/select2.min.css">
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/main.css">
+    <link type="text/css" rel="stylesheet" href="https://admin.yallaryada.net/front/css/rtl.css">
+    <link rel="shortcut icon" href="https://admin.yallaryada.net/front/imgs/icon.ico">
 </head>
 <body>
-    <form method="post" action="/signup">
-        <!-- Heading -->
-        <h4>
-            Create an account
-        </h4>
+<section class="login">
+    <div class="container-fluid p-lg-2 p-0">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-12">
+                <form action="/signup" method="post"
+                      class="w-100 d-block white-bg radius-lg-11 mt-lg-5 mt-0 login-content"
+                      enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="PXS7iYvagfNTndlbhgk47teMJtkFhYaEYOXFSyQk">                    <div class="w-100 d-block login-logo"><img class="d-block"
+                                                               src="https://admin.yallaryada.net/front/imgs/logo.png">
+                    </div>
+                    
 
-        <!-- Subheading -->
-        <p >
-            Please fill up your information below to sign up.
-        </p>
-<center>
-        <!-- Email -->
-        <div>
-            <label>Email address*</label>
-            <div>
-                <input type="email"  name="email" id="emailStr" required>
+                    <div class="row">
+
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="name" class="inline-block py-1 test-sm text-gray-700">
+                                الاسم <span style="color: red">*</span>
+                            </label>
+                            <input id="name" type="text"
+                                   class="form-control "
+                                   name="name" placeholder="John Doe" value="" required
+                                   autocomplete="name"
+                                   autofocus>
+
+                                                    </div>
+
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="email" class="inline-block py-1 test-sm text-gray-700">
+                                البريد الالكتروني <span style="color: red">*</span>
+                            </label> 
+
+                            <input id="email" type="email"
+                                   class="form-control "
+                                   name="email" placeholder="john@example.com" value="" required
+                                   autocomplete="email">
+
+                                                    </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="password" class="inline-block py-1 test-sm text-gray-700">
+                                كلمة السر <span style="color: red">*</span>
+                            </label>
+
+                            <input id="password" type="password"
+                                   class="form-control "
+                                   placeholder="********" name="password" required autocomplete="new-password">
+
+                                                    </div>
+
+                    <div class="row">
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="phone" class="inline-block py-1 test-sm text-gray-700">
+                                رقم الهاتف 
+                            </label>  
+
+                            <input id="phone" type="text"
+                                   class="form-control "
+                                   name="phone" placeholder="00970">
+                                                    </div>
+
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="gender" class="inline-block py-1 test-sm text-gray-700">
+                                الجنس 
+                            </label>
+                            <select name="gender" id="" class="form-control">
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="city" class="inline-block py-1 test-sm text-gray-700">
+                                المدينة 
+                            </label>
+
+                            <input id="city" type="text"
+                                   class="form-control"
+                                   name="city">
+                                                    </div>
+
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="type" class="inline-block py-1 test-sm text-gray-700">
+                                هل أنت :
+                            </label>
+                            <select name="type" id="" class="form-control">
+                                <option value="coatch">مدرب أو مدربة</option>
+                                <option value="spec">اختصاصي \ اختصاصية أغذية</option>
+                                <option value="other">غير ذلك</option>
+                            </select>
+                        </div>
+
+                        <div class="w-100 d-block form-group col-md-6" style="display: none;">
+                            <label for="other_type" class="inline-block py-1 test-sm text-gray-700">
+                                ماهو التخصص
+                            </label>
+
+                            <input id="other_type" type="text"
+                                   class="form-control"
+                                   name="other_type">
+                                                    </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="degree" class="inline-block py-1 test-sm text-gray-700">
+                                هل انت حاصل على شهادة تخصص في مجالك ؟
+                            </label>
+                            <select name="degree" id="" class="form-control">
+                                <option value="yes">نعم</option>
+                                <option value="no">لا</option>
+                            </select>
+                        </div>
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="trainingtype" class="inline-block py-1 test-sm text-gray-700">
+                                نوع التدريب
+                            </label>
+                            <select name="trainingtype" id="" class="form-control">
+                                <option value="BodyBuilding">بناء أجسام</option>
+                                <option value="Fitness">لياقة</option>
+                                <option value="Yoga">اليوجا</option>
+                                <option value="Functional">التدريب الوظيفي</option>
+                                <option value="other">غير ذلك</option>
+                            </select>
+                        </div>
+
+                        <div class="w-100 d-block form-group col-md-6" style="display: none;">
+                            <label for="other_trainingtype" class="inline-block py-1 test-sm text-gray-700">
+                                نوع التدريب
+                            </label>
+
+                            <input id="other_trainingtype" type="text"
+                                   class="form-control"
+                                   name="other_trainingtype">
+                                                    </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="foodspes" class="inline-block py-1 test-sm text-gray-700">
+                                التخصص في مجال الأغذية
+                            </label>
+                            <select name="foodspes" id="" class="form-control">
+                                <option value="sportsNutritionist">تغذية رياضية</option>
+                                <option value="ClinicalDietitian">تغذية طبية</option>
+                                <option value="other">غير ذلك</option>
+                            </select>
+                        </div>
+
+                        <div class="w-100 d-block form-group col-md-6" style="display: none;">
+                            <label for="other_foodspes" class="inline-block py-1 test-sm text-gray-700">
+                                نوع التغذية
+                            </label>
+
+                            <input id="other_foodspes" type="text"
+                                   class="form-control"
+                                   name="other_foodspes">
+                                                    </div>
+
+                        <div class="w-100 d-block form-group col-md-6">
+                            <label for="foodspes" class="inline-block py-1 test-sm text-gray-700">
+                                نبذة عنك: (خبرتك في المجال) يمكنك تعديلها لاحقا
+                            </label>
+
+                            <textarea id="description" type="text" rows="6"
+                                      class="form-control"
+                                      name="description">
+                    </textarea>
+                                                    </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="w-100 d-block form-group col-md-12">
+                            <label for="foodspes" class="inline-block py-1 test-sm text-gray-700">
+                                صورة البروفايل
+                            </label>
+
+                            <input
+                                name="profile_picture"
+                                accept="image/*"
+                                type="file">
+                                                    </div>
+                    </div>
+                    <div class="w-100 d-block text-center form-group">
+                        <input class="w-100 butn main-butn" type="submit" value="تسجيل">
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Password -->
-        <div>
-            <label>Password*</label>
-            <div class="input-group">
-                <input type="password"  name="password" minlength="6">
-            </div>
-        </div>
-        
-        <!-- Button -->
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/popper.min.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/fontawesome.min.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/select2.min.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/video.min.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/main.js"></script>
+<script type="text/javascript" src="https://admin.yallaryada.net/front/js/ltr.js"></script>
 
-        <div>
-            <label>Full name*</label>
-            <div>        
-        <div>
-            <input type="text" name="full_name" placeholder="full name">
-        </div>
+<script> var hid = 'false';</script>
 
-        <div>
-            <label>Username*</label>
-            <div>        
-        <div>
-            <input type="text" name="username" placeholder="username">
-        </div>
+<script>
+    $(document).on('change', 'select[name=type]', function () {
+        let val = $(this).val();
+        if (val == 'other') {
+            $('input[name=other_type]').parent().show();
+        } else {
+            $('input[name=other_type]').parent().hide();
+        }
+    });
 
-        <div>
-            <label>Bio*</label>
-            <div>        
-        <div>
-            <input type="text" name="bio" placeholder="bio" maxlength="280">
-        </div> 
-        <div>   
-            <input type="submit" value="Submit">
-        </div>
-    </form>
-</center>
-    <br>
-    <a href="/"><button>signin</button></a>
+    $(document).on('change', 'select[name=trainingtype]', function () {
+        let val = $(this).val();
+        if (val == 'other') {
+            $('input[name=other_trainingtype]').parent().show();
+        } else {
+            $('input[name=other_trainingtype]').parent().hide();
+        }
+    });
+
+    $(document).on('change', 'select[name=foodspes]', function () {
+        let val = $(this).val();
+        if (val == 'other') {
+            $('input[name=other_foodspes]').parent().show();
+        } else {
+            $('input[name=other_foodspes]').parent().hide();
+        }
+    });
+</script>
+
 </body>
 </html>
