@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request , redirect, url_for, flash
 from flask import session as login_session
-from py_edamam import PyEdamam
 import pyrebase
 import requests
 import json
